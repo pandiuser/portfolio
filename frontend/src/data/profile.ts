@@ -10,7 +10,7 @@ export const profile = {
   email: "pandiyarajans372@gmail.com",
   workEmail: "pandiyarajan.s@entropik.io",
   phone: "+91 6382320439",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/Pandiyarajan_S_International_Resume.pdf",
   tagline:
     "I architect resilient backend platforms — from enterprise PKI automation to AI-assisted research pipelines.",
   summary:
