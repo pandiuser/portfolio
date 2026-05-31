@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//opt/homebrew/bin/**)",
+      "Read(//Users/entropik/.nvm/versions/**)",
+      "Read(//Users/entropik/.volta/**)",
+      "Bash(brew --version)"
+    ]
+  }
+}
