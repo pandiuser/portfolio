@@ -13,7 +13,7 @@ export function Skills() {
         </>
       }
     >
-      <div className="grid grid-cols-3 gap-x-4 gap-y-10 sm:gap-x-8 sm:gap-y-12 lg:grid-cols-5 mt-16 justify-items-start">
+      <div className="grid grid-cols-3 gap-x-4 gap-y-10 sm:gap-x-8 sm:gap-y-12 lg:grid-cols-5 mt-16 justify-items-center">
         {technologies.map((tech, idx) => (
           <motion.div
             key={tech.name}
