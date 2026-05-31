@@ -82,7 +82,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-border/60 pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
+        <div className="mt-10 border-t border-border/60 pt-6 text-center text-xs text-muted-foreground">
           <p>
             © {new Date().getFullYear()} {profile.name}. All rights reserved.
           </p>
