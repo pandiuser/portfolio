@@ -14,6 +14,7 @@ import {
   Loader2,
   Mail,
   MapPin,
+  Phone,
   Send,
 } from "lucide-react";
 import { Section } from "@/components/common/section";
@@ -30,8 +31,8 @@ const schema = z.object({
   name: z.string().min(2, "Name is too short").max(120, "Name is too long"),
   email: z.string().email("Please enter a valid email"),
   subject: z.string().min(3, "Subject is too short").max(160, "Subject is too long"),
-  message: z.string().min(20, "Tell me a little more").max(4000, "Message is too long"),
-  honeypot: z.string().max(0).optional(),
+  message: z.string().min(5, "Please enter a longer message (min 5 chars)").max(4000, "Message is too long"),
+  honeypot: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -90,16 +91,22 @@ export function Contact() {
             href={`mailto:${profile.email}`}
           />
           <ContactRow
+            icon={<Phone className="size-4" />}
+            label="Phone"
+            value={profile.phone}
+            href={`tel:${profile.phone.replace(/\s+/g, "")}`}
+          />
+          <ContactRow
             icon={<Linkedin className="size-4" />}
             label="LinkedIn"
-            value="pandiyarajan-s"
+            value="pandiyarajans"
             href={profile.socials.linkedin}
             external
           />
           <ContactRow
             icon={<Github className="size-4" />}
             label="GitHub"
-            value="pandiyarajans"
+            value="pandiuser"
             href={profile.socials.github}
             external
           />
@@ -137,7 +144,16 @@ export function Contact() {
               <SuccessState onReset={() => setSent(false)} />
             ) : (
               <form
-                onSubmit={form.handleSubmit((values) => mutation.mutate(values))}
+                onSubmit={form.handleSubmit((values) => {
+                  if (values.honeypot) {
+                    // Silent bot or autofill check bypass
+                    setSent(true);
+                    form.reset();
+                    toast.success("Thanks — I'll get back within 24 hours.");
+                    return;
+                  }
+                  mutation.mutate(values);
+                })}
                 noValidate
                 className="space-y-5"
               >

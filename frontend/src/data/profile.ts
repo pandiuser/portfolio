@@ -18,8 +18,8 @@ export const profile = {
   shortBio:
     "I architect resilient backend systems and AI platforms. Currently a Senior Software Engineer at Entropik — previously shipped enterprise PKI automation at AppViewX.",
   socials: {
-    github: "https://github.com/pandiyarajans",
-    linkedin: "https://www.linkedin.com/in/pandiyarajan-s",
+    github: "https://github.com/pandiuser",
+    linkedin: "https://www.linkedin.com/in/pandiyarajans/",
     email: "mailto:pandiyarajans372@gmail.com",
     twitter: null as string | null,
   },

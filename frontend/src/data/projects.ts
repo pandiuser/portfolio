@@ -155,7 +155,7 @@ export const projects: Project[] = [
       "Nginx",
     ],
     links: {
-      github: "https://github.com/pandiyarajans/portfolio",
+      github: "https://github.com/pandiuser/portfolio",
       demo: "https://pandiyarajan-portfolio.vercel.app",
     },
   },
